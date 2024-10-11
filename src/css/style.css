@@ -1,0 +1,207 @@
+@charset "utf-8";
+/*----------------------------------------------------->
+
+        Roots
+
+<----------------------------------------------------*/
+
+html {
+    font-family: "Poppins", "Inter", sans-serif;
+}
+
+:root{
+    --app-primary-color: #343873;
+    --app-bg-darkmode: #0a0a0a;
+    --app-bg-lightmode: #fafafa;
+    --app-text-darkmode: #181818;
+    --app-text-lightmode: #0a0a0a;
+    --app-secondary-color: #404474;
+    --app-border-rad: 7px;
+
+}
+
+/*----------------------------------------------------->
+
+        Utility Classes 
+
+<----------------------------------------------------*/
+
+.container {
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
+}
+
+.flex { 
+    display: flex;
+}
+
+.f-col {
+    flex-direction: column;
+}
+
+/*----------------------------------------------------->
+
+        Body and Header
+
+<----------------------------------------------------*/
+
+body {
+    transition: background-color  0.5s ease, color 0.5s ease;
+    background-color: var(--app-bg-lightmode);
+}
+
+header {
+    width: 100%;
+    height: 70px; 
+    background-color: var(--app-primary-color);
+
+    .container {
+    justify-content: space-between; 
+    }
+}
+
+h1 {
+    position: relative;
+    top: 2px;
+    font-size: 40px;
+    font-family: "Poppins", "Inter", sans-serif;
+
+    color: #fff; 
+}
+
+ul li {
+    display: inline;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    line-height: 70px;
+    
+    a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Poppins", "Inter", sans-serif;
+
+    
+        .fa-linkedin {
+        font-size: 26px;
+        }
+    }
+}
+
+/*----------------------------------------------------->
+
+        Main - Converter and Switch
+
+<----------------------------------------------------*/
+
+main {
+    justify-content: center;
+    align-items: center;
+    height: calc(100svh - 70px);
+}
+
+.control-box {
+    width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    
+    h2 {
+    font-size: 40px;
+    font-family: "Poppins", "Inter", sans-serif;
+    text-align: center;
+    color: var(--app-text-lightmode);
+    margin-bottom: 20px;
+    }
+    
+    form {
+        gap: 10px; 
+    }
+}
+
+input[type="text"] {
+    border: none;
+    padding: 10px;
+    border-radius: var(--app-border-rad);
+    box-shadow: 0.5px 0.5px 5px rgb(65 65 70 / 0.2);
+}
+
+.convert-button {
+    font-size: 16px;
+    padding: 10px;
+    background-color: var(--app-primary-color);
+    border-radius: var(--app-border-rad);
+    box-shadow: inset -0.5px -0.5px 2px rgb(65 65 70 / 0.4);
+    color: #fff;
+    cursor: pointer;
+}
+
+.radio-group {
+    justify-content: center;
+    gap: 15px; 
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+label {
+    color: var(--app-text-lightmode);
+}
+
+.output p {
+    width: 100%;
+    height: 60px;
+    line-height: 60px; 
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--app-text-darkmode);
+}
+
+.mode-switch {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--app-primary-color);
+    color: #fff; 
+
+    i {
+        font-size: 50px;
+    }
+}
+
+/*----------------------------------------------------->
+
+        Night Mode
+
+<----------------------------------------------------*/
+
+body.night-mode {
+    background-color: var(--app-bg-darkmode);
+}
+
+body.night-mode .output p{
+    color: #fff;
+}
+
+body.night-mode .control-box h2 {
+    color: #fff;
+}
+
+body.night-mode label {
+    color: #fff;
+}
+
+body.night-mode.mode-switch {
+    background-color: var(--app-secondary-color);
+    color: #eeeb38;
+}
